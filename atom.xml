@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>郑伟博客</title>
   <id>https://zhengwei1949.github.io</id>
-  <updated>2017-04-05T13:15:59+08:00</updated>
+  <updated>2017-04-05T18:19:48+08:00</updated>
   <subtitle>前端技术学习</subtitle>
   <link href="https://zhengwei1949.github.io"></link>
   <author>
     <name>郑伟博客</name>
   </author>
-  <entry>
-    <title>bower使用手记</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/bower使用手记.html</id>
-    <content type="html">&lt;p&gt;bower是一个用来下载前端的库(框架)的下载器&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/bower使用手记.html"></link>
-  </entry>
   <entry>
     <title>vue简明教程</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
@@ -22,11 +15,18 @@
     <link href="https://zhengwei1949.github.io/vue简明教程.html"></link>
   </entry>
   <entry>
-    <title>常用前端资源汇总</title>
+    <title>理解promise</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/常用前端资源汇总.html</id>
-    <content type="html">&lt;p&gt;常用前端资源汇总&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/理解promise.html</id>
+    <content type="html">&lt;p&gt;理解promise&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/理解promise.html"></link>
+  </entry>
+  <entry>
+    <title>打包sea.js</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
+    <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
   </entry>
   <entry>
     <title>扒网站教程</title>
@@ -43,11 +43,11 @@
     <link href="https://zhengwei1949.github.io/gulp使用总结.html"></link>
   </entry>
   <entry>
-    <title>理解promise</title>
+    <title>常用前端资源汇总</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/理解promise.html</id>
-    <content type="html">&lt;p&gt;理解promise&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/理解promise.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/常用前端资源汇总.html</id>
+    <content type="html">&lt;p&gt;常用前端资源汇总&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
   </entry>
   <entry>
     <title>vue cli使用总结</title>
@@ -57,18 +57,18 @@
     <link href="https://zhengwei1949.github.io/vue cli使用总结.html"></link>
   </entry>
   <entry>
-    <title>打包sea.js</title>
+    <title>bower使用手记</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
-    <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/bower使用手记.html</id>
+    <content type="html">&lt;p&gt;bower是一个用来下载前端的库(框架)的下载器&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/bower使用手记.html"></link>
   </entry>
   <entry>
-    <title>browser-sync总结</title>
-    <updated>2017-04-03T09:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/browser-sync使用总结.html</id>
-    <content type="html">&lt;p&gt;browser-sync是一个用来提高我们异步测试浏览器兼容性的工具。&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/browser-sync使用总结.html"></link>
+    <title>如何写简历</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/简历.html</id>
+    <content type="html">&lt;p&gt;如何写简历&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/简历.html"></link>
   </entry>
   <entry>
     <title>express实现留言本项目</title>
