@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="前端框架,">
+        <meta name="description" content="vue简明教程">
+        <meta name="author" content="">
+        <title>vue简明教程</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">vue简明教程</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491184800"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e6%a1%86%e6%9e%b6/index.html">前端框架</a></span>
+                </section>
+                <article class="content"><!-- TOC -->
+
+<ul>
+<li><a href="#学习目标">学习目标</a></li>
+<li><a href="#学习建议">学习建议</a></li>
+<li><a href="#相关代码下载地址">相关代码下载地址</a></li>
+<li><a href="#问题反馈">问题反馈</a></li>
+<li><a href="#从angular-1x中学到的概念review">从angular 1.x中学到的概念review</a>
+
+<ul>
+<li><a href="#框架与库的区别">框架与库的区别</a></li>
+<li><a href="#spa与多页面的区别">SPA与多页面的区别</a></li>
+<li><a href="#mvcmvvm">mvc,mvvm</a></li>
+<li><a href="#mvc和mvvm的作用">mvc和mvvm的作用：</a></li>
+<li><a href="#如何安装angularjs">如何安装angular.js</a></li>
+<li><a href="#数据绑定之单向数据绑定">数据绑定之单向数据绑定</a></li>
+<li><a href="#双向数据绑定">双向数据绑定</a></li>
+<li><a href="#watch">$watch</a></li>
+<li><a href="#filter过滤器">filter过滤器</a></li>
+<li><a href="#指令">指令</a></li>
+<li><a href="#自定义指令">自定义指令</a>
+
+<ul>
+<li><a href="#示例">示例</a></li>
+<li><a href="#常见属性">常见属性</a></li>
+</ul></li>
+<li><a href="#ngroute路由">ngRoute路由</a></li>
+<li><a href="#todomvc的实现思路">todoMVC的实现思路</a></li>
+</ul></li>
+<li><a href="#vue基础知识">vue基础知识</a>
+
+<ul>
+<li><a href="#说明">说明</a></li>
+<li><a href="#谁在用">谁在用</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#chrome相关插件">chrome相关插件</a>
+
+<ul>
+<li><a href="#使用注意">使用注意</a></li>
+</ul></li>
+<li><a href="#visual-studio-code编辑器相关插件">visual studio code编辑器相关插件</a></li>
+<li><a href="#vue的特点">vue的特点</a></li>
+<li><a href="#hello-world">hello world</a>
+
+<ul>
+<li><a href="#示例-1">示例</a></li>
+</ul></li>
+<li><a href="#讲解">讲解</a>
+
+<ul>
+<li><a href="#注意事项">注意事项</a></li>
+</ul></li>
+<li><a href="#单次绑定">单次绑定</a></li>
+<li><a href="#实现值加1">实现值加1</a></li>
+<li><a href="#实现值加1升级版">实现值加1升级版</a></li>
+<li><a href="#为什么vue的性能这么高">为什么vue的性能这么高？</a></li>
+<li><a href="#双向数据绑定的原理">双向数据绑定的原理</a></li>
+<li><a href="#表单控件">表单控件</a></li>
+<li><a href="#v-bind指令">v-bind指令</a></li>
+<li><a href="#watch监视">watch监视</a></li>
+<li><a href="#计算属性">计算属性</a>
+
+<ul>
+<li><a href="#用计算属性替代监视">用计算属性替代监视</a></li>
+<li><a href="#用计算属性替代filter">用计算属性替代filter</a></li>
+</ul></li>
+<li><a href="#v-bindclass">v-bind:class</a></li>
+<li><a href="#v-ifv-else">v-if,v-else</a></li>
+<li><a href="#v-show">v-show</a></li>
+<li><a href="#v-for">v-for</a></li>
+<li><a href="#v-cloak">v-cloak</a></li>
+<li><a href="#事件处理器-v-on">事件处理器 v-on</a></li>
+<li><a href="#事件对象event">事件对象event</a></li>
+<li><a href="#修饰符">修饰符</a></li>
+<li><a href="#组件">组件</a>
+
+<ul>
+<li><a href="#组件使用注意事项">组件使用注意事项</a></li>
+</ul></li>
+<li><a href="#子组件向父组件要数据">子组件向父组件要数据</a></li>
+<li><a href="#slot">slot</a></li>
+<li><a href="#vue-cli">vue-cli</a></li>
+<li><a href="#开启debug模式">开启debug模式</a></li>
+<li><a href="#是否开启html5的history模式开启后需服务器端支持否则报404">是否开启HTML5的history模式,开启后，需服务器端支持，否则报404</a></li>
+<li><a href="#vue-router的钩子函数">vue-router的钩子函数</a></li>
+</ul></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2>学习目标</h2>
+
+<ul>
+<li>熟悉常见的vue.js框架的API</li>
+<li>了解如何安装使用单文件组件</li>
+<li>能自己完成todoMVC项目</li>
+</ul>
+
+<h2>学习建议</h2>
+
+<ul>
+<li>课程中使用的是v2.1.6版本</li>
+<li>如果网上找的教程或书的代码执行不了，很正常，因为过时了</li>
+</ul>
+
+<h2>相关代码下载地址</h2>
+
+<p><a href="https://github.com/black-pony/learn_vue_the_hard_way">下载地址</a></p>
+
+<h2>问题反馈</h2>
+
+<ul>
+<li>方式一：在博客下面留言</li>
+<li>方式二：给我写邮件 js-class@qq.com</li>
+</ul>
+
+<h2>从angular 1.x中学到的概念review</h2>
+
+<h3>框架与库的区别</h3>
+
+<p>库就是一堆的工具，比如我们使用了jQuery,但是并不能改变我们以往（第一步选择元素，第二步添加事件）的思路，只不过方便了我们写代码。
+框架就是一套规则和规范，我们用了某框架之后，我们必须要按这套框架的规则去做，比如bootstrap,我们只要使用了bootstrap，我们按照它的教程定义一些class，就会得到一个响应式的页面。</p>
+
+<h3>SPA与多页面的区别</h3>
+
+<p>多页面应用就是一个网站里面，有一堆的页面，页面与页面之间是独立的，缺点就是当我们从一个页面跳转到另外一个页面的时候，另一个页面所有的东西全部需要从服务器加载，这样会出现白屏的现象，用户体验不好。
+SPA就是single page application,单页面应用，比如我们打开网易云音乐，我们点击上面的链接会发现，页面并没有跳转，只不过是hash在发生改变，我们通过js监听hashchange事件，当触发的时候，我们就去服务器加载对应的数据，然后替换掉对应的DOM区域，但是页面的主体结构并不需要变动。</p>
+
+<h3>mvc,mvvm</h3>
+
+<p>mvc就是把整个代码划分成模型、视图、控制器这三大块，模型负责管理数据（增删改查），视图就是我们的模板，控制器负责连接模型和视图。
+1、view传送指令到controller
+2、controller完成业务逻辑后，要求model改变状态
+3、model将新的数据发送到view,用户得到反馈</p>
+
+<p>mvvm是把整个代码划分成模型、视图、view model三大块：
+mvvm采用双向数据绑定，view的变动，自动反映在view model，反之亦然。</p>
+
+<h3>mvc和mvvm的作用：</h3>
+
+<p>1、解耦：让我们的代码结构比较清晰
+2、便于我们的维护</p>
+
+<h3>如何安装angular.js</h3>
+
+<p>1、暴力安装
+2、通过bower安装(淘汰了)
+3、npm安装
+4、cdn安装</p>
+
+<h3>数据绑定之单向数据绑定</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;myController&quot;&gt;
+    &lt;!--当我们修改下面的div的值的时候，不会影响model里面message值--&gt;
+    &lt;div contenteditable &gt;{{message}}&lt;/div&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.onload= function(){
+            document.getElementsByTagName(&quot;div&quot;)[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.message = 'Hello world';
+        }]);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>双向数据绑定</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;myController&quot;&gt;
+    &lt;!--当我们修改下面的input的值的时候，会影响model里面message值--&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;message&quot;&gt;
+    &lt;div contenteditable &gt;{{message}}&lt;/div&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.onload= function(){
+            document.getElementsByTagName(&quot;input&quot;)[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.message = 'Hello world';
+        }]);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>$watch</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;myController&quot;&gt;
+    &lt;!--当我们修改下面的input的值的时候，会影响model里面message值--&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;message&quot;&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.onload= function(){
+            document.getElementsByTagName(&quot;input&quot;)[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.message = 'Hello world';
+            $scope.$watch('message',function(now,prev){
+                console.log(now,prev);
+            });
+        }]);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>filter过滤器</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;myController&quot;&gt;
+    &lt;!--当我们修改下面的input的值的时候，会影响model里面message值--&gt;
+    {{'1484657346797'|date}}
+    &lt;ul&gt;
+        &lt;li ng-repeat=&quot;item in arr | filter : {isTrue:true}&quot;&gt;{{item.name}}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.onload= function(){
+            document.getElementsByTagName(&quot;input&quot;)[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.arr = [
+                {name:'itcast',isTrue:true},
+                {name:'heima',isTrue:false},
+                {name:'chuanzhi',isTrue:true},
+                {name:'black-pony',isTrue:false}
+            ];
+        }]);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>指令</h3>
+
+<ul>
+<li>ng-app</li>
+<li>ng-model</li>
+<li>ng-init</li>
+<li>ng-controller</li>
+<li>ng-bind</li>
+<li>ng-repeat
+
+<ul>
+<li>$index</li>
+<li>$odd</li>
+<li>$even</li>
+<li>$first</li>
+<li>$last</li>
+</ul></li>
+<li>ng-class</li>
+<li>ng-style</li>
+<li>ng-show</li>
+<li>ng-hide</li>
+<li>ng-if</li>
+<li>ng-switch</li>
+<li>ng-switch-when</li>
+<li>ng-src</li>
+<li>ng-href</li>
+<li>ng-bind-html(须引入ng-sanitize模块)</li>
+</ul>
+
+<h3>自定义指令</h3>
+
+<h4>示例</h4>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;myController&quot;&gt;
+    &lt;input type=&quot;text&quot; my-focus&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+
+        }]);
+        myApp.directive('myFocus',function(){
+            return {
+                restrict:'A',
+                link:function(scope,element,attributes){
+                    element[0].focus();
+                }
+            };
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4>常见属性</h4>
+
+<ul>
+<li>template</li>
+<li>templateUrl</li>
+<li>replace</li>
+<li>restrict</li>
+<li>transclude</li>
+<li>scope</li>
+<li>link</li>
+</ul>
+
+<h3>ngRoute路由</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;myApp&quot;&gt;
+    &lt;div ng-view&gt;&lt;/div&gt;
+    &lt;script src=&quot;./node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./node_modules/angular-route/angular-route.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var myApp = angular.module('myApp',['ngRoute']);
+        myApp.config(['$routeProvider',function($routeProvider){
+            $routeProvider
+                .when('/foo',{
+                    template:'&lt;h1&gt;foo&lt;/h1&gt;',
+                    controller:'fooController'
+                })
+                .when('/bar',{
+                    template:'&lt;h1&gt;bar&lt;/h1&gt;',
+                    controller:'fooController'
+                })
+                .otherwise({
+                    template:'&lt;h1&gt;foo&lt;/h1&gt;',
+                    controller:'fooController'
+                });
+        }]);
+        myApp.controller('fooController',['$scope',function($scope){
+
+        }]);
+        myApp.controller('barController',['$scope',function($scope){
+            
+        }]);
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>todoMVC的实现思路</h3>
+
+<ul>
+<li>本质上是进行数组的增删改查</li>
+<li>显示 &ndash;&gt; ng-repeat</li>
+<li>删除 &ndash;&gt; replace</li>
+<li>修改 &ndash;&gt; ng-class</li>
+<li>增加 &ndash;&gt; push</li>
+</ul>
+
+<h2>vue基础知识</h2>
+
+<h3>说明</h3>
+
+<ul>
+<li>本教程采用的是vue 2.1.9,请下载这个版本的进行学习，否则可能导致API用不了或过时</li>
+<li>在学习阶段，不建议一上来就学习单文件组件模式</li>
+</ul>
+
+<h3>谁在用</h3>
+
+<ul>
+<li>阿里爸爸</li>
+<li>饿了吗</li>
+<li>talking Data</li>
+</ul>
+
+<h3>安装</h3>
+
+<blockquote>
+<p>npm init -y
+ npm install -S vue@2.1.9</p>
+</blockquote>
+
+<h3>chrome相关插件</h3>
+
+<p>vue-dev tools</p>
+
+<h4>使用注意</h4>
+
+<p>一定要在服务器环境下面使用才能点亮这个插件</p>
+
+<h3>visual studio code编辑器相关插件</h3>
+
+<ul>
+<li>vue</li>
+<li>vue components</li>
+<li>vue 2 snippets</li>
+<li>vueHelper</li>
+<li>vetur</li>
+</ul>
+
+<h3>vue的特点</h3>
+
+<ul>
+<li>简单轻量的js框架</li>
+<li>数据驱动(自动追踪依赖的模板表达式和计算属性)</li>
+<li>每个组件代表独立的单元、有各自的view及数据逻辑,用可解耦、可复用的组件来构造界面,你总是应该从UI出发抽象出不同的组件，然后像搭积木一样把它们拼装起来</li>
+<li>最适合用来开发SPA</li>
+</ul>
+
+<h3>hello world</h3>
+
+<h4>示例</h4>
+
+<pre><code class="language-html"> &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+        {{message}}
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                message:'Hello world'
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>讲解</h3>
+
+<ul>
+<li>el &ndash;&gt; 要绑定的元素，限定我们的vue项目的范围,这里可以用id，也可以用class，一般默认用id</li>
+<li>data &ndash;&gt; 要绑定的数据模型</li>
+<li>{{message}} &ndash;&gt; 插值表达式,可以用来获取我们的model中的数据</li>
+<li>new Vue() &ndash;&gt; 每个vue项目都是通过构造器Vue来创建一个vue实例的</li>
+<li>v-model &ndash;&gt; 类似ng-model,可以用来进行双向数据绑定</li>
+<li>data &ndash;&gt; 我们的model</li>
+</ul>
+
+<h4>注意事项</h4>
+
+<ul>
+<li>vue不能挂载到body上面，会出现warnning警告</li>
+</ul>
+
+<h3>单次绑定</h3>
+
+<p>页面上的有些东西一旦赋值渲染之后，基本上不太可能会变动了，比如像我们的图片的url,像链接的href值，这个时候，我们可以使用单次绑定</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+        &lt;div v-once&gt;
+            {{message}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'.myApp',
+            data:{
+                message:'Hello world'
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>实现值加1</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;button&quot; v-on:click=&quot;counter = (counter - 0) + 1&quot; v-model=&quot;counter&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'.myApp',
+            data:{
+                counter:1
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>实现值加1升级版</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;button&quot; v-on:click=&quot;add&quot; v-model=&quot;counter&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'.myApp',
+            data:{
+                counter:1
+            },
+            methods:{
+                add:function(){
+                    this.counter++;
+                }
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>为什么vue的性能这么高？</h3>
+
+<p>实现双向数据绑定，目前主要有三种方式：脏检查、观察机制、封装属性访问器</p>
+
+<ul>
+<li><p>脏检查：框架将所有需要监控的属性放在一个队列中，当发生特定事件时，我们的框架只要觉得当前这个数据有可能变脏了，它就会遍历整个序列，对被监控的属性做对比，如果发生变化，则调用相应的处理函数。(angular实现了一套类似我们的原生的js的一套event loop)
+angular 1.x的双向数据绑定是自己实现出来一套event loop机制，通过apply,watch list监听数据的变化，一旦它认为你的model变了，也就是变“脏”了，就去重新执行一轮event loop,进行脏值检测，所以效率很低。
+<img src="data:image/gif;base64,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" data-src="http://ojmkbnynx.bkt.clouddn.com/17-1-17/33059309-file_1484661229826_df58.png" alt="" /></p></li>
+
+<li><p>观察机制：通过 Object.observe() 「已废弃」方法对对象进行监控，一旦其发生变化，将会执行相应的handler。</p></li>
+
+<li><p>封装属性访问器：使用 Object.defineProperty 将对象的属性转换为 getter/setter ，当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。
+vue.js使用的就是这种方式（当然不支持IE8）</p></li>
+</ul>
+
+<h3>双向数据绑定的原理</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;text&quot; eric-model=&quot;message&quot;&gt;
+        &lt;input type=&quot;text&quot; eric-model=&quot;message&quot;&gt;
+        &lt;div&gt;
+            &lt;div&gt;{{message}}&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var vm = {};
+        Object.defineProperty(vm,'message',{
+            val:null,
+            get:function(){
+                this.val = this.val || '';
+                return this.val;
+            },
+            set:function(val){
+                this.val = val;
+                refresh_view();
+            }
+        });
+        var el = document.querySelector('#myApp');
+
+        //初始化视图
+        function init_view(){
+            var list = el.getElementsByTagName('*');
+            var reg1 = /&lt;.*&gt;/g;
+            var reg2 = /{{(.*)}}/;
+            for(var i=0;i&lt;list.length;i++){
+                // console.log(list[i].innerHTML);
+                if(list[i].tagName!='INPUT' &amp;&amp; !reg1.test(list[i].innerHTML) &amp;&amp; reg2.test(list[i].innerHTML)){
+                    var myBind = reg2.exec(list[i].innerHTML)[1];
+                    list[i].setAttribute('myBind',myBind);
+                    // console.log(list[i].getAttribute('myBind'))
+                    list[i].innerHTML = vm[list[i].getAttribute('myBind')];
+                }
+                if(list[i].tagName === 'INPUT' &amp;&amp; list[i].getAttribute('eric-model')){
+                    var myBind = list[i].getAttribute('eric-model');
+                    list[i].value = vm[list[i].getAttribute('eric-model')];
+                }
+            }
+        }
+
+        init_view();
+
+        function refresh_view(){
+            var list = el.getElementsByTagName('*');
+            for(var i=0;i&lt;list.length;i++){
+                if(list[i].getAttribute('myBind')){
+                    list[i].innerHTML = vm[list[i].getAttribute('myBind')];
+                }
+                if(list[i].getAttribute('eric-model') &amp;&amp; list[i].tagName === 'INPUT'){
+                    list[i].value = vm[list[i].getAttribute('eric-model')];
+                }
+            }
+        }
+
+        var modelEleList = document.querySelectorAll('input[eric-model]');
+        console.log(modelEleList);
+        for(var i=0;i&lt;modelEleList.length;i++){
+            modelEleList[i].addEventListener('input',function(){
+                var myBind = this.getAttribute('eric-model');
+                vm[myBind] = this.value;
+            },false);
+        }
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>表单控件</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;form-input&quot;&gt;
+    &lt;span&gt;message is {{message}}&lt;/span&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+  &lt;/div&gt;
+  &lt;hr&gt;
+  &lt;div class=&quot;form-chkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;
+    &lt;label for=&quot;checkbox&quot;&gt;{{checked}}&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;hr&gt;
+  &lt;div class=&quot;form-chkboxes&quot;&gt;
+   &lt;input type=&quot;checkbox&quot; id=&quot;jack&quot; v-model=&quot;checkedNames&quot; value=&quot;jack&quot;&gt;
+   &lt;input type=&quot;checkbox&quot; id=&quot;john&quot; v-model=&quot;checkedNames&quot; value=&quot;john&quot;&gt;
+    &lt;br&gt;
+    message:{{checkedNames | json}}
+  &lt;/div&gt;
+  &lt;hr&gt;
+  &lt;div class=&quot;form-radio&quot;&gt;
+    &lt;label for=&quot;one&quot;&gt;one&lt;/label&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;one&quot; v-model=&quot;picked&quot;&gt;
+    &lt;br&gt;
+    &lt;label for=&quot;two&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;two&quot; v-model=&quot;picked&quot;&gt;
+    &lt;br&gt;
+    &lt;span&gt;Picked:{{picked}}&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;hr&gt;
+  &lt;div class=&quot;form-select&quot;&gt;
+    &lt;select v-model=&quot;selected&quot;&gt;
+      &lt;option&gt;A&lt;/option&gt;
+      &lt;option selected&gt;B&lt;/option&gt;
+      &lt;option&gt;C&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;
+    &lt;span&gt;selected:{{selected}}&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+   new Vue({
+     el:&quot;.form-input&quot;,
+     data:{
+       message:&quot;&quot;
+     }
+   });
+   new Vue({
+     el:&quot;.form-chkbox&quot;,
+     data:{
+       checked:false
+     }
+   });
+   new Vue({
+     el:&quot;.form-chkboxes&quot;,
+     data:{
+       checkedNames:[]
+     }
+   });
+   new Vue({
+     el:&quot;.form-radio&quot;,
+     data:{
+       picked:''
+     }
+   });
+   new Vue({
+     el:&quot;.form-select&quot;,
+     data:{
+       selected:''
+     }
+   });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-bind指令</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+        &lt;input type=&quot;text&quot; v-bind=&quot;{id:myId,myAttr:myAttr,value:myValue}&quot;&gt;
+        &lt;img v-bind:src=&quot;myImgSrc&quot;&gt;
+        &lt;img :src=&quot;myImgSrc&quot;&gt;
+        &lt;a v-bind:href=&quot;myUrl&quot;&gt;百度&lt;/a&gt;
+        &lt;a :href=&quot;myUrl&quot;&gt;百度&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                myId:'demo',
+                myAttr:'demoAttr',
+                myValue:'wfewf',
+                myImgSrc:'http://i0.hdslb.com/bfs/archive/ac6ad98e868f313a332eb757634ddc9fcd5d7753.jpg@.webp',
+                myUrl:'http://baidu.com',
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>watch监视</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+       &lt;input type=&quot;text&quot; v-model=&quot;message1&quot;&gt;
+       &lt;input type=&quot;text&quot; v-model=&quot;message2&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                message1:'hello1',
+                message2:'hello2'
+            },  
+            watch:{
+                message1:function(now,pre){
+                    console.log(now,pre);
+                }
+            }
+        });
+        vm.$watch('message2',function(now,pre){
+            console.log(now,pre);
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>计算属性</h3>
+
+<p>vue在2.1.5(大概这个版本，记不太清了)的时候，曾经取消了监视，因为作者发现，完全可以采用计算属性来实现：</p>
+
+<h4>用计算属性替代监视</h4>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+       &lt;input type=&quot;text&quot; v-model=&quot;a&quot;&gt;
+       &lt;input type=&quot;text&quot; v-model=&quot;b&quot;&gt;
+       &lt;input type=&quot;text&quot; v-model=&quot;result&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                a:0,
+                b:0
+            },  
+            computed:{
+                result:function(){
+                    return Number(this.a) + Number(this.b);
+                }
+            }
+        });
+        vm.$watch('message2',function(now,pre){
+            console.log(now,pre);
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4>用计算属性替代filter</h4>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myApp&quot;&gt;
+       &lt;ul&gt;
+           &lt;li v-for=&quot;item in arr1&quot;&gt;{{item}}&lt;/li&gt;
+       &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                arr:[2,3,4,5,6]
+            },  
+            computed:{
+                arr1:function(){
+                    return this.arr.filter(function(item){return item &gt; 4});
+                }
+            }
+        });
+        vm.$watch('message2',function(now,pre){
+            console.log(now,pre);
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-bind:class</h3>
+
+<p>使用原则：静态的class放在HTML的class特效内，而动态的应该使用v-bind:class</p>
+
+<pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;div v-bind:class=&quot;{red:isRed}&quot;&gt;11&lt;/div&gt;
+    &lt;div v-bind:class=&quot;{a,b}&quot;&gt;111&lt;/div&gt;
+    &lt;div v-bind:class=&quot;[c,{d:isD,e:isE}]&quot;&gt;111&lt;/div&gt;
+    &lt;!--绑定style--&gt;
+    &lt;div v-bind:style=&quot;{fontSize:size + 'px'}&quot;&gt;111&lt;/div&gt;
+    &lt;div v-bind:style=&quot;{{width:'100px'},styleObjectB}&quot;&gt;11&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        isRed:true,
+        size:20,
+        a:true,
+        b:false,
+        c:&quot;world&quot;,
+        isD:true,
+        isE:true,
+        styleObjectA:{
+          color:'red',
+          fontSize:'13px'
+        },
+        styleObjectB:{
+          backgroundColor:'cyan'
+        }
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-if,v-else</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;label for=&quot;one&quot;&gt;one&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;one&quot; v-model=&quot;picked&quot; value=&quot;one&quot;&gt;
+    &lt;label for=&quot;two&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;two&quot; v-model=&quot;picked&quot; value=&quot;two&quot;&gt;
+    &lt;div v-if=&quot;picked==='one'&quot;&gt;yes&lt;/div&gt;
+    &lt;div v-else&gt;No&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        picked:'one'
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-show</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;label for=&quot;one&quot;&gt;one&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;one&quot; v-model=&quot;picked&quot; value=&quot;one&quot;&gt;
+    &lt;label for=&quot;two&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;two&quot; v-model=&quot;picked&quot; value=&quot;two&quot;&gt;
+    &lt;div v-show=&quot;picked==='one'&quot;&gt;yes&lt;/div&gt;
+    &lt;div v-show=&quot;picked!='one'&quot;&gt;No&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        picked:'one'
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-for</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;!--数组的迭代--&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(item,index) in arr&quot;&gt;{{item}} - {{index}}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!--对象的迭代--&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(value,key) in obj&quot;&gt;{{key}} - {{value}}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!--vue特有的迭代--&gt;
+    &lt;ul&gt;
+    &lt;li v-for=&quot;n in 10&quot;&gt;{{n}}&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        arr:[2,3,4],
+        obj:{name:&quot;eric zheng&quot;,sex:&quot;male&quot;}
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>v-cloak</h3>
+
+<p>配合[v-cloak] { display: none }使用，类似angular的ng-cloak</p>
+
+<h3>事件处理器 v-on</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;input type=&quot;button&quot; v-on:click=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+    &lt;input type=&quot;button&quot; @click=&quot;fn&quot; value=&quot;@click点击触发&quot;&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        arr:[2,3,4],
+        obj:{name:&quot;eric zheng&quot;,sex:&quot;male&quot;}
+      },
+      methods:{
+        fn:function(){
+          alert(&quot;被点击了&quot;);
+        }
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>事件对象event</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;input type=&quot;button&quot; v-on:click=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+    &lt;input type=&quot;button&quot; @click=&quot;fn&quot; value=&quot;@click点击触发&quot;&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        arr:[2,3,4],
+        obj:{name:&quot;eric zheng&quot;,sex:&quot;male&quot;}
+      },
+      methods:{
+        fn:function(event){
+          console.log(event.target);
+        }
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>修饰符</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;input type=&quot;button&quot; v-on:click=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+    &lt;!--相当于写了stopPropagation--&gt;
+    &lt;input type=&quot;button&quot; v-on:click.stop=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+    &lt;!--相当于写了preventDefault--&gt;
+    &lt;input type=&quot;button&quot; v-on:click.prevent=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+    &lt;!--既阻止冒泡还阻止事件默认行为--&gt;
+     &lt;input type=&quot;button&quot; v-on:click.prevent.stop=&quot;fn&quot; value=&quot;v-on:click点击触发&quot;&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        arr:[2,3,4],
+        obj:{name:&quot;eric zheng&quot;,sex:&quot;male&quot;}
+      },
+      methods:{
+        fn:function(event){
+          console.log(event.target);
+        }
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>组件</h3>
+
+<p>我们在angular当中，可以通过自定义指令来实现在页面上自定义一些元素标签，但是在vue当中，是通过组件的形式来实现的,组件是vue最主要也是最强大的特性之一，它提供了HTML元素的扩充性，也将程序代码封装起来以便开发者重复使用。</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;custom-header&gt;&lt;/custom-header&gt;
+    &lt;custom-main&gt;&lt;/custom-main&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+   var app = new Vue({
+     el:'#app',
+     components:{
+       CustomHeader:Vue.extend({
+         template:'&lt;div class=&quot;header&quot;&gt;header组件&lt;/div&gt;'
+       }),
+       CustomMain:Vue.extend({
+         template:`
+          &lt;ul&gt;
+            &lt;li&gt;&lt;custom-block&gt;&lt;/custom-block&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;custom-block&gt;&lt;/custom-block&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;custom-block&gt;&lt;/custom-block&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;custom-block&gt;&lt;/custom-block&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;custom-block&gt;&lt;/custom-block&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+         `,
+         components:{
+           CustomBlock:Vue.extend({
+             template:'&lt;h1&gt;Hello world&lt;/h1&gt;'
+           })
+         }
+       })
+
+     }
+   });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4>组件使用注意事项</h4>
+
+<p><img src="data:image/gif;base64,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" data-src="http://ojmkbnynx.bkt.clouddn.com/17-1-17/89984038-file_1484668060104_e92a.png" alt="" /></p>
+
+<h3>子组件向父组件要数据</h3>
+
+<p>类似咱们angular中的自定义指令的scope</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;child :number=&quot;arr&quot;&gt;&lt;/child&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    new Vue({
+      el:&quot;#demo&quot;,
+      data:{
+        arr:[2,3,4,5,6]
+      },
+      components:{
+        child:Vue.extend({
+          template:&quot;&lt;div&gt;&lt;div v-for='item in number'&gt;{{item}}&lt;/div&gt;&lt;/div&gt;&quot;,
+          props:{//props就是element上的attrs,换个名字property,变成复数 自定义属性的属性校验
+            number:Array//这里指定需要的数据类型，如果写错了，控制台会有错误警告
+          }
+        })
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>slot</h3>
+
+<p>允许外部环境插入内容到组件的视图结构内
+比如子组件为：</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    &lt;h1&gt;提示&lt;/h1&gt;
+    &lt;slot name=&quot;content&quot;&gt;&lt;/slot&gt;
+    &lt;span&gt;确定&lt;/span&gt;
+    &lt;span&gt;取消&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>父组件使用子组件：</p>
+
+<pre><code class="language-html">&lt;confirm&gt;
+    &lt;p slot=&quot;content&quot;&gt;HelloWorld&lt;/p&gt;
+&lt;/confirm&gt;
+</code></pre>
+
+<p>最终的渲染完成的效果为：</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    &lt;h1&gt;提示&lt;/h1&gt;
+    &lt;p&gt;helloWorld&lt;/p&gt;
+    &lt;span&gt;确定&lt;/span&gt;
+    &lt;span&gt;取消&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>vue-cli</h3>
+
+<p>第一步、安装vue-cli npm install -g vue-cli
+第二步、使用vue-cli初始化项目<code>vue init webpack-simple mydemo</code>
+第三步、切换到vue项目当中
+第四步、执行npm install
+第五步、执行npm run build编译成功项目
+第六步、执行npm run dev会自动开启项目在浏览器当中（默认是自动刷新的）</p>
+
+<h3>开启debug模式</h3>
+
+<pre><code class="language-javascript">    Vue.config.debug = true;
+</code></pre>
+
+<h3>是否开启HTML5的history模式,开启后，需服务器端支持，否则报404</h3>
+
+<pre><code class="language-javascript">var router = new VueRouter({
+    history:true
+});
+</code></pre>
+
+<h3>vue-router的钩子函数</h3>
+
+<ul>
+<li>beforeEach 在路由切换开始时调用
+<code>javascript
+router.beforeEach(function(){
+window.scrollTo(0,0);
+});
+</code></li>
+<li>afterEach 在路由成功切换到激活状态时调用
+<code>javascript
+router.afterEach(function(transition){
+console.log(transition);
+});
+</code></li>
+<li>router.redirect()  在找不到路由时跳转</li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/bower%e4%bd%bf%e7%94%a8%e6%89%8b%e8%ae%b0.html">bower使用手记</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/%e5%b8%b8%e7%94%a8%e5%89%8d%e7%ab%af%e8%b5%84%e6%ba%90%e6%b1%87%e6%80%bb.html">常用前端资源汇总</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

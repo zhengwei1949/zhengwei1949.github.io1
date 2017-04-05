@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="js理论知识,">
+        <meta name="description" content="理解promise">
+        <meta name="author" content="">
+        <title>理解promise</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">理解promise</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491184800"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/js%e7%90%86%e8%ae%ba%e7%9f%a5%e8%af%86/index.html">js理论知识</a></span>
+                </section>
+                <article class="content"><h1>如果不用promise</h1>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;style&gt;
+    .ball{
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+    .ball1{
+      background: red;
+    }
+    .ball2{
+      background: yellow;
+    }
+    .ball3{
+      background: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;ball ball1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;ball ball2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;ball ball3&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    var ball1 = document.querySelector('.ball1');
+    var ball2 = document.querySelector('.ball2');
+    var ball3 = document.querySelector('.ball3');
+    function animate(ball,distance,callback){
+      setTimeout(function(){
+        var marginLeft = parseInt(getComputedStyle(ball).marginLeft);
+        // console.log(marginLeft,distance);
+        if(marginLeft === distance){
+          callback();
+        }else{
+          if(marginLeft &lt; distance){
+            marginLeft ++;
+          }else{
+            marginLeft--;
+          }
+          ball.style.marginLeft = marginLeft + &quot;px&quot;;
+          animate(ball,distance,callback);
+        }
+
+      },13);
+    }
+    animate(ball1,100,function(){
+      animate(ball2,200,function(){
+        animate(ball3,300,function(){
+          animate(ball3,150,function(){
+            animate(ball2,150,function(){
+              animate(ball1,150,function(){
+
+              })
+            })
+          })
+        })
+      })
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<h2>用了promise</h2>
+
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;style&gt;
+    .ball{
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+    .ball1{
+      background: red;
+    }
+    .ball2{
+      background: yellow;
+    }
+    .ball3{
+      background: green;
+    }
+  &lt;/style&gt;
+  &lt;script src=&quot;./node_modules/bluebird/js/browser/bluebird.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;ball ball1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;ball ball2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;ball ball3&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    var ball1 = document.querySelector('.ball1');
+    var ball2 = document.querySelector('.ball2');
+    var ball3 = document.querySelector('.ball3');
+    function promiseAnimate(ball,distance){
+    //构造函数声明模式，它在用来包裹非 promise API 
+      return new Promise(function(resolve,reject){
+        function animate(){
+          setTimeout(function(){
+            var marginLeft = parseInt(getComputedStyle(ball).marginLeft);
+            if(marginLeft === distance){
+              resolve();
+            }else{
+              if(marginLeft &lt; distance){
+                marginLeft ++;
+              }else{
+                marginLeft--;
+              }
+              ball.style.marginLeft = marginLeft + &quot;px&quot;;
+              animate();
+            }
+
+          },13);
+        }
+        animate()
+      });
+    }
+
+    promiseAnimate(ball1,100)
+      .then(function(){
+        console.log(111);
+        return promiseAnimate(ball2,200);
+      })
+      .then(function(){
+        return promiseAnimate(ball3,300);
+      })
+      .then(function(){
+        return promiseAnimate(ball3,150);
+      })
+      .then(function(){
+        return promiseAnimate(ball2,150);
+      })
+      .then(function(){
+        return promiseAnimate(ball1,150);
+      })
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<h1>jQuery中的promise</h1>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src=&quot;node_modules/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var loadData = function(){
+      return $.ajax({
+        url:&quot;./a.json&quot;,
+        type:&quot;get&quot;
+      })
+    }
+    loadData().then(function(data){
+      console.log(data);
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h2>生成器</h2>
+
+<pre><code class="language-javascript">function* inc () {
+ let number = 0
+ while (true)
+ yield number++
+}
+
+let test = inc()
+
+console.log(test.next().value) // -&gt; 0
+console.log(test.next().value) // -&gt; 1
+console.log(test.next().value) // -&gt; 2
+console.log(test.next().value) // -&gt; 2
+console.log(test.next().value) // -&gt; 2
+console.log(test.next().value) // -&gt; 2
+console.log(test.next().value) // -&gt; 2
+console.log(test.next().value) // -&gt; 2
+
+</code></pre>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/gulp%e4%bd%bf%e7%94%a8%e6%80%bb%e7%bb%93.html">gulp总结</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/vue%20cli%e4%bd%bf%e7%94%a8%e6%80%bb%e7%bb%93.html">vue cli使用总结</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

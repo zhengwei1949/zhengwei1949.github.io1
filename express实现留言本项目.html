@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="前端工具,">
+        <meta name="description" content="express实现留言本项目">
+        <meta name="author" content="">
+        <title>express实现留言本项目</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">express实现留言本项目</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491181200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a></span>
+                </section>
+                <article class="content"><!-- TOC -->
+
+<ul>
+<li><a href="#学习目标">学习目标</a></li>
+<li><a href="#项目模板下载地址">项目模板下载地址</a></li>
+<li><a href="#步骤">步骤</a>
+
+<ul>
+<li><a href="#步骤1---初始化项目">步骤1 - 初始化项目</a></li>
+<li><a href="#步骤2---安装express第三方包">步骤2 - 安装express第三方包</a></li>
+<li><a href="#步骤3---书写appjs代码">步骤3 - 书写app.js代码</a></li>
+<li><a href="#步骤4---测试服务器代码是否成功">步骤4 - 测试服务器代码是否成功</a></li>
+<li><a href="#步骤5---构建路由">步骤5 - 构建路由</a></li>
+<li><a href="#步骤6---检测路由是否成功">步骤6 - 检测路由是否成功</a></li>
+<li><a href="#步骤7---渲染模板">步骤7 - 渲染模板</a></li>
+<li><a href="#步骤8---设置静态资源">步骤8 - 设置静态资源</a></li>
+<li><a href="#步骤9---连接数据库">步骤9 - 连接数据库</a></li>
+<li><a href="#步骤10---安装mysql第三方依赖">步骤10 - 安装mysql第三方依赖</a></li>
+<li><a href="#步骤11---把mysql集成到express代码当中">步骤11 - 把mysql集成到express代码当中：</a></li>
+<li><a href="#步骤12---把首页的数据换成动态">步骤12 - 把首页的数据换成动态</a></li>
+<li><a href="#步骤13---删除功能实现">步骤13 - 删除功能实现</a></li>
+<li><a href="#步骤14---添加功能实现">步骤14 - 添加功能实现</a></li>
+<li><a href="#步骤15编辑功能完成">步骤15：编辑功能完成</a>
+
+<ul>
+<li><a href="#编辑功能是最复杂的注意事项如下">编辑功能是最复杂的，注意事项如下：</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#最终实现代码地址">最终实现代码地址</a></li>
+<li><a href="#待优化">待优化</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2>学习目标</h2>
+
+<ul>
+<li>通过本项目熟悉express的用法</li>
+<li>通过本项目熟悉如何用node使用mysql</li>
+</ul>
+
+<h2>项目模板下载地址</h2>
+
+<p><a href="https://github.com/black-pony/dairy_template">下载地址</a></p>
+
+<h2>步骤</h2>
+
+<h3>步骤1 - 初始化项目</h3>
+
+<p>执行<code>npm init -y</code>，修改package.json中的entry point为<code>app.js</code></p>
+
+<pre><code class="language-javascript">{
+  &quot;name&quot;: &quot;dairy&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;app.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^4.14.1&quot;
+  }
+}
+
+</code></pre>
+
+<h3>步骤2 - 安装express第三方包</h3>
+
+<p>执行<code>npm install --save express</code></p>
+
+<h3>步骤3 - 书写app.js代码</h3>
+
+<p>创建app.js文件，代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var app = express();
+app.get('/',function(req,res){
+    res.send('Hello World');
+});
+app.listen(3000,function(){
+    console.log('服务器开启成功，正在监听端口3000...');
+});
+</code></pre>
+
+<h3>步骤4 - 测试服务器代码是否成功</h3>
+
+<p>在命令行里面执行<code>node app.js</code>,通过浏览器测试代码是否成功</p>
+
+<h3>步骤5 - 构建路由</h3>
+
+<p>修改app.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var app = express();
+var router = require('./router');
+app.use(router);
+app.listen(3000,function(){
+    console.log('服务器开启成功，正在监听端口3000...');
+});
+</code></pre>
+
+<p>添加router.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+router.get('/',function(req,res){
+    res.send('首页');
+});
+router.route('/add')
+      .get(function(req,res){
+        res.send('添加页面 get');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.route('/edit')
+      .get(function(req,res){
+        res.send('编辑页面 get');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.get('/delete',function(req,res){
+    res.send('删除 get');
+});
+module.exports = router;
+</code></pre>
+
+<h3>步骤6 - 检测路由是否成功</h3>
+
+<p>使用postman把上面的这几个路由全部检测一下看是否都可以使用</p>
+
+<h3>步骤7 - 渲染模板</h3>
+
+<p>这里，我们使用的模板引擎是ejs,所以，我们先安装一下ejs第三方依赖</p>
+
+<pre><code>npm install --save ejs
+</code></pre>
+
+<p>然后，我们在app.js当中加载进来ejs这个中间件：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var app = express();
+app.set('view engine','ejs');
+var router = require('./router');
+app.use(router);
+app.listen(3000,function(){
+    console.log('服务器开启成功，正在监听端口3000...');
+});
+
+</code></pre>
+
+<p>我们把<code>index.html</code>,<code>edit.html</code>,<code>add.html</code>三个文件放到views文件夹当中，扩展名改成ejs</p>
+
+<p>接着，我们修改router.js的代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+router.get('/',function(req,res){
+    // res.send('首页');
+    res.render('index');
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        res.render('edit');
+      })
+      .post(function(req,res){
+        res.send('编辑页面 post');
+      });
+router.get('/delete',function(req,res){
+    res.send('删除 get');
+});
+module.exports = router;
+</code></pre>
+
+<h3>步骤8 - 设置静态资源</h3>
+
+<p>我们检测代码会发现，虽然首页，编辑页面，添加页面全部可以正常显示成功，但是它们都没有样式，所以我们现在设置一下静态资源</p>
+
+<p>修改app.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var app = express();
+app.set('view engine','ejs');
+app.use(express.static('public'));
+var router = require('./router');
+app.use(router);
+app.listen(3000,function(){
+    console.log('服务器开启成功，正在监听端口3000...');
+});
+</code></pre>
+
+<p>因为我们知道静态资源的文件夹是作为根文件夹，所以，我们把index.ejs,edit.ejs,add.ejs中的路径修改一下</p>
+
+<h3>步骤9 - 连接数据库</h3>
+
+<p>我们打开phpmyadmin,切换到sql界面如下：
+<img src="data:image/gif;base64,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" data-src="http://i1.piimg.com/567571/be28b74d7012c0c0.png" alt="" />
+<img src="data:image/gif;base64,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" data-src="http://p1.bqimg.com/567571/6032260d812a03d5.png" alt="" /></p>
+
+<p>把模板中的itcast_erit.sql用编辑器打开，把里面的文本全部拷贝到sqll界面当中，点击<code>执行</code>
+<img src="data:image/gif;base64,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" data-src="http://p1.bqimg.com/567571/6b6749862cbefddc.png" alt="" /></p>
+
+<h3>步骤10 - 安装mysql第三方依赖</h3>
+
+<pre><code>npm install --save mysql
+</code></pre>
+
+<h3>步骤11 - 把mysql集成到express代码当中：</h3>
+
+<p>router.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'itcast_eric'
+});
+
+router.get('/',function(req,res){
+    // res.send('首页');
+    connection.query('select * from articles',function(err,rows,fields){
+        if(err)throw err;
+        console.log(rows);
+    });
+    res.render('index');
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        res.render('edit');
+      })
+      .post(function(req,res){
+        res.send('编辑页面 post');
+      });
+router.get('/delete',function(req,res){
+    res.send('删除 get');
+});
+module.exports = router;
+</code></pre>
+
+<h3>步骤12 - 把首页的数据换成动态</h3>
+
+<p>修改router.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'itcast_eric'
+});
+
+router.get('/',function(req,res){
+    // res.send('首页');
+    connection.query('select * from articles',function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.render('index',{list:rows});
+    });
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        res.render('edit');
+      })
+      .post(function(req,res){
+        res.send('编辑页面 post');
+      });
+router.get('/delete',function(req,res){
+    res.send('删除 get');
+});
+module.exports = router;
+</code></pre>
+
+<p>修改<code>index.ejs</code>js代码如下：</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/index.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;h1&gt;首页&lt;/h1&gt;
+    &lt;ul class=&quot;list&quot;&gt;
+      &lt;% for(var i=0;i&lt;list.length;i++){ %&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;num&quot;&gt;&lt;%= list[i].id %&gt;&lt;/span&gt;&lt;span&gt;&lt;%= list[i].title %&gt;&lt;/span&gt;&lt;a class=&quot;delete&quot; href=&quot;/delete?id=&lt;%= list[i].id %&gt;&quot;&gt;删除&lt;/a&gt;&lt;a class=&quot;edit&quot; href=&quot;/edit?id=&lt;%= list[i].id %&gt;&quot;&gt;编辑&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;% } %&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>这个时候我们访问浏览器会发现我们首页数据全部换成动态数据了</p>
+
+<h3>步骤13 - 删除功能实现</h3>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'itcast_eric'
+});
+
+router.get('/',function(req,res){
+    // res.send('首页');
+    connection.query('select * from articles',function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.render('index',{list:rows});
+    });
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(function(req,res){
+        res.send('添加页面 post');
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        res.render('edit');
+      })
+      .post(function(req,res){
+        res.send('编辑页面 post');
+      });
+router.get('/delete',function(req,res){
+    // res.send('删除 get');
+    var id = req.query.id;
+    connection.query(`delete from articles where id = ${id}`,function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.redirect('/');
+    });
+});
+module.exports = router;
+</code></pre>
+
+<h3>步骤14 - 添加功能实现</h3>
+
+<p>修改请求方法为post,请求的url为/add的相关代码：</p>
+
+<p>add.ejs代码如下：</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/index.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;h1&gt;添加&lt;/h1&gt;
+    &lt;form method=&quot;POST&quot; action=&quot;/add&quot; enctype=&quot;multipart/form-data&quot;&gt;
+      &lt;div class=&quot;title&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;标题&quot; name=&quot;title&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;textarea  id=&quot;&quot; cols=&quot;150&quot; rows=&quot;30&quot; placeholder=&quot;内容&quot; name=&quot;content&quot;&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>app.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var app = express();
+app.set('view engine','ejs');
+app.use(express.static('public'));
+var router = require('./router');
+app.use(router);
+app.listen(3000,function(){
+    console.log('服务器开启成功，正在监听端口3000...');
+});
+</code></pre>
+
+<p>router.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'itcast_eric'
+});
+
+router.get('/',function(req,res){
+    // res.send('首页');
+    connection.query('select * from articles',function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.render('index',{list:rows});
+    });
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(upload.any(),function(req,res){
+        var fields = req.body;
+        connection.query(`insert into articles(title,content) values (&quot;${fields.title}&quot;,&quot;${fields.content}&quot;)`,function(err,result){
+            if(err)throw err;
+            // console.log(result);
+            res.redirect('/');
+        });
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        res.render('edit');
+      })
+      .post(function(req,res){
+        res.send('编辑页面 post');
+      });
+router.get('/delete',function(req,res){
+    // res.send('删除 get');
+    var id = req.query.id;
+    connection.query(`delete from articles where id = ${id}`,function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.redirect('/');
+    });
+
+module.exports = router;
+</code></pre>
+
+<h3>步骤15：编辑功能完成</h3>
+
+<h4>编辑功能是最复杂的，注意事项如下：</h4>
+
+<ul>
+<li>textarea里面的内容涉及到换行、单双引号等，所以需要用encodeURIComponent转义</li>
+<li>在显示的时候相应的使用decodeURIComponent</li>
+</ul>
+
+<p>edit.ejs代码如下：</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/index.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;h1&gt;编辑&lt;/h1&gt;
+    &lt;form method=&quot;POST&quot; action=&quot;/edit&quot; enctype=&quot;multipart/form-data&quot;&gt;
+      &lt;div class=&quot;title&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;标题&quot; name=&quot;title&quot; value=&quot;&lt;%= title %&gt;&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;textarea  id=&quot;&quot; cols=&quot;150&quot; rows=&quot;30&quot; placeholder=&quot;内容&quot; name=&quot;content&quot;&gt;&lt;%= content %&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;&lt;%= id %&gt;&quot; name=&quot;id&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>router.js代码如下：</p>
+
+<pre><code class="language-javascript">var express = require('express');
+var router = express.Router();
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'itcast_eric'
+});
+
+router.get('/',function(req,res){
+    // res.send('首页');
+    connection.query('select * from articles',function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.render('index',{list:rows});
+    });
+});
+router.route('/add')
+      .get(function(req,res){
+        // res.send('添加页面 get');
+        res.render('add');
+      })
+      .post(function(req,res){
+        // console.log(req.fields);
+        // res.send('添加页面 post');
+        connection.query(`insert into articles(title,content) values (&quot;${req.fields.title}&quot;,&quot;${req.fields.content}&quot;)`,function(err,result){
+            if(err)throw err;
+            // console.log(result);
+            res.redirect('/');
+        });
+      });
+router.route('/edit')
+      .get(function(req,res){
+        // res.send('编辑页面 get');
+        var id = req.query.id;
+        connection.query(`select * from articles where id = ${id} limit 1`,function(err,rows,fields){
+            if(err)throw err;
+            // console.log(rows);
+            res.render('edit',{id:rows[0].id,title:rows[0].title,content:decodeURIComponent(rows[0].content)});
+        });
+      })
+      .post(upload.any(),function(req,res){
+        // res.send('编辑页面 post');
+        var fields = req.body;
+        connection.query(`update articles set title=&quot;${fields.title}&quot;,content=&quot;${encodeURIComponent(fields.content)}&quot; where id = ${fields.id}`,function(err,result){
+            if(err)throw err;
+            console.log(result);
+            res.redirect('/');
+        });
+      });
+router.get('/delete',function(req,res){
+    // res.send('删除 get');
+    var id = req.query.id;
+    connection.query(`delete from articles where id = ${id}`,function(err,rows,fields){
+        if(err)throw err;
+        // console.log(rows);
+        res.redirect('/');
+    });
+});
+module.exports = router;
+</code></pre>
+
+<h2>最终实现代码地址</h2>
+
+<p><a href="https://github.com/black-pony/dairy">下载地址</a></p>
+
+<h2>待优化</h2>
+
+<ul>
+<li>把数据模型相关的代码提取出来</li>
+<li>使用orm2</li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/browser-sync%e4%bd%bf%e7%94%a8%e6%80%bb%e7%bb%93.html">browser-sync总结</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/git%e6%80%bb%e7%bb%93.html">git总结</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

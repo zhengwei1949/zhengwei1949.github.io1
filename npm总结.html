@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="前端工具,">
+        <meta name="description" content="npm总结">
+        <meta name="author" content="">
+        <title>npm总结</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">npm总结</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491127200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a></span>
+                </section>
+                <article class="content"><!-- TOC -->
+
+<ul>
+<li><a href="#概念理解">概念理解</a></li>
+<li><a href="#what-is-package">what is package</a></li>
+<li><a href="#what-is-module">what is module</a></li>
+<li><a href="#package和module的关系">package和module的关系</a></li>
+<li><a href="#常见命令总结">常见命令总结</a></li>
+<li><a href="#升级node">升级node</a>
+
+<ul>
+<li><a href="#mac电脑">mac电脑</a></li>
+<li><a href="#windows电脑">windows电脑</a></li>
+</ul></li>
+<li><a href="#npm用不了怎么办">npm用不了怎么办</a></li>
+<li><a href="#semantic-versioning">semantic versioning</a>
+
+<ul>
+<li><a href="#abc的含义">a.b.c的含义</a></li>
+</ul></li>
+<li><a href="#在packagejson中的体现">在package.json中的体现</a></li>
+<li><a href="#packagejson说明">package.json说明</a></li>
+<li><a href="#解决下载npm包慢的问题">解决下载npm包慢的问题</a>
+
+<ul>
+<li><a href="#方式一-使用taobao源">方式一 使用taobao源</a></li>
+<li><a href="#使用步骤">使用步骤</a></li>
+<li><a href="#方式二-使用nrm">方式二 使用nrm</a></li>
+</ul></li>
+</ul>
+
+<!-- /TOC -->
+
+<blockquote>
+<p>本文翻译自<code>https://docs.npmjs.com</code></p>
+</blockquote>
+
+<h2>概念理解</h2>
+
+<ul>
+<li>package 是一个被<code>package.json</code>描述文件或者文件夹</li>
+<li>module  是一个可以通过<code>Node.js</code>的<code>require</code>来引用的文件或者文件夹(当然前端的直接通过script引入这里不提)</li>
+</ul>
+
+<h2>what is package</h2>
+
+<ul>
+<li>一个包含<code>package.json</code>的文件夹</li>
+<li>一个已经放到<code>npmjs.org</code>上面的，可以通过<code>npm install --save &lt;name&gt;@&lt;version&gt;</code>下载的东西</li>
+</ul>
+
+<h2>what is module</h2>
+
+<ul>
+<li>包含<code>package.json</code>且里面带有<code>main</code>属性的的一个文件夹</li>
+<li>包含<code>index.js</code>的文件夹</li>
+<li>一个JavaScript文件</li>
+</ul>
+
+<h2>package和module的关系</h2>
+
+<p>大部分时候我们说二者是等价的，但有一些cli工具型的package不包含main属性是作为前端工具来使用的，所以不算是module</p>
+
+<h2>常见命令总结</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>npm init</td>
+<td>交互式的创建<code>package.json</code>文件</td>
+</tr>
+
+<tr>
+<td>npm init -y</td>
+<td>默认创建<code>package.json</code>文件</td>
+</tr>
+
+<tr>
+<td>npm install packageName &ndash;save、-S</td>
+<td>安装库(框架)、node第三方包,也可以写成npm install &ndash;save packageName</td>
+</tr>
+
+<tr>
+<td>npm install packageName &ndash;save-dev、-D</td>
+<td>安装当前项目的前端构建工具等(gulp,babel)</td>
+</tr>
+
+<tr>
+<td>npm install -g packageName</td>
+<td>全局安装前端工具(browser-sync,gulp-cli,vue-cli,react-cli之类)</td>
+</tr>
+
+<tr>
+<td>npm uninstall -g、&ndash;save</td>
+<td>&ndash;save-dev</td>
+</tr>
+
+<tr>
+<td>npm docs packageName</td>
+<td>查看某库(框架)、Node第三方包的官网、描述信息</td>
+</tr>
+
+<tr>
+<td>npm install -g npm@latest</td>
+<td>更新npm版本到最新(自己没测过，不知是否有效)</td>
+</tr>
+
+<tr>
+<td>npm shrinkwrap</td>
+<td>锁定你当前安装的npm包的版本</td>
+</tr>
+
+<tr>
+<td>npm ls</td>
+<td>打印出来所有当前电脑安装的npm包</td>
+</tr>
+
+<tr>
+<td>npm config list</td>
+<td>我主要是用来查看当前电脑所使用的源地址(registry)</td>
+</tr>
+
+<tr>
+<td>npm root</td>
+<td>打印出来当前项目文件夹的node_modules的路径</td>
+</tr>
+
+<tr>
+<td>npm cache clean</td>
+<td>清除npm的缓存</td>
+</tr>
+
+<tr>
+<td>npm update</td>
+<td>升级本地包</td>
+</tr>
+
+<tr>
+<td>npm outdated</td>
+<td>查看哪些本地包有更新的版本</td>
+</tr>
+
+<tr>
+<td>npm update -g packageName</td>
+<td>升级全局包</td>
+</tr>
+
+<tr>
+<td>npm outdated -g &ndash;depth=0</td>
+<td>查看哪些包有更新的版本</td>
+</tr>
+</tbody>
+</table>
+
+<h2>升级node</h2>
+
+<h3>mac电脑</h3>
+
+<pre><code>brew install node
+</code></pre>
+
+<h3>windows电脑</h3>
+
+<p>直接卸载旧的，安装最新的msi文件</p>
+
+<h2>npm用不了怎么办</h2>
+
+<p>重装node的msi软件</p>
+
+<h2>semantic versioning</h2>
+
+<h3>a.b.c的含义</h3>
+
+<ul>
+<li>主版本号.次版本号.修订号</li>
+<li>Bug修复及极其小的改动 &ndash;&gt; 增加最后一个数字 1.0.0 &ndash;&gt; 1.0.1</li>
+<li>添加了新的功能特性，但没有破坏旧的API &ndash;&gt; 增加中间的数字 1.0.0 &ndash;&gt; 1.1.0</li>
+<li>完全重构，不能向后兼容 &ndash;&gt; 增加首尾数字 1.0.0 &ndash;&gt; 2.0.0</li>
+</ul>
+
+<h2>在package.json中的体现</h2>
+
+<ul>
+<li>打补丁 &ndash;&gt; 1.0,1.0.x,~1.0.4</li>
+<li>小的改动 &ndash;&gt; 1,1.x,^1.0.4</li>
+<li>大的改动 &ndash;&gt; * , x</li>
+</ul>
+
+<p><img src="data:image/gif;base64,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" data-src="/images/semver.png" alt="semver对照表" /></p>
+
+<h2>package.json说明</h2>
+
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>配置说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>当前包的名字，不能超过214个字符，不能包含.,_,不能有大写字符，不能和核心模块重名，</td>
+</tr>
+
+<tr>
+<td>version</td>
+<td>当前包的版本号，在npmjs.org上面，名字@版本号一定是唯一的标识，版本号必须符合semver</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>关于当前包的功能的描述</td>
+</tr>
+
+<tr>
+<td>keywords</td>
+<td>当前包的描述的关键词，有利于在npmjs.org进行搜索的时候可以搜索出来</td>
+</tr>
+
+<tr>
+<td>homepage</td>
+<td>当前包的官网</td>
+</tr>
+
+<tr>
+<td>bugs</td>
+<td>如果你的包有bug,别的用户可以在这里提交issue</td>
+</tr>
+
+<tr>
+<td>license</td>
+<td>指定你的包使用的证书类型</td>
+</tr>
+
+<tr>
+<td>author</td>
+<td>作者</td>
+</tr>
+
+<tr>
+<td>contributors</td>
+<td>贡献者</td>
+</tr>
+
+<tr>
+<td>files</td>
+<td>指定你的包必须包含的一些文件</td>
+</tr>
+
+<tr>
+<td>bin</td>
+<td>npm会软链接到./node_modules/.bin下面</td>
+</tr>
+
+<tr>
+<td>main</td>
+<td>指定入口文件，如果没写默认是index.js</td>
+</tr>
+
+<tr>
+<td>repository</td>
+<td>指定你的包的仓库地址</td>
+</tr>
+
+<tr>
+<td>scripts</td>
+<td>指定可以执行的脚本</td>
+</tr>
+
+<tr>
+<td>config</td>
+<td>可以在scripts的脚本当中，通过npm_package_config_xxx变量来访问</td>
+</tr>
+
+<tr>
+<td>dependencies</td>
+<td>依赖项</td>
+</tr>
+
+<tr>
+<td>devDepencies</td>
+<td>像一些编译coffeescript,less,sass的包都安装在这里面</td>
+</tr>
+</tbody>
+</table>
+
+<h2>解决下载npm包慢的问题</h2>
+
+<h3>方式一 使用taobao源</h3>
+
+<p><a href="https://npm.taobao.org/">taobao镜像</a>一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</p>
+
+<h3>使用步骤</h3>
+
+<ol>
+<li>执行<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
+<li>把以前<code>npm install packageName</code>替换成<code>cnpm install packageName</code></li>
+</ol>
+
+<h3>方式二 使用nrm</h3>
+
+<ol>
+<li>执行<code>npm install -g nrm</code></li>
+<li>执行<code>nrm test</code>测试哪个镜像源下载速度最快
+```
+C:\Users\Administrator&gt;nrm test</li>
+</ol>
+
+<ul>
+<li>npm &mdash;- Fetch Error
+cnpm &mdash; 364ms
+taobao - 159ms
+nj &mdash;&ndash; Fetch Error
+rednpm - 256ms
+npmMirror  Fetch Error
+edunpm - Fetch Error
+```</li>
+<li>通过测试我们发现，taobao是快，把镜像切换到taobao
+<code>
+nrm use taobao
+</code></li>
+<li>以后使用的时候，还是执行<code>npm install packageName</code>,但是下载的时候默认会从淘宝镜像去下载</li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/git%e6%80%bb%e7%bb%93.html">git总结</a>
+                    </section>
+                    
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="前端工具,">
+        <meta name="description" content="browser-sync总结">
+        <meta name="author" content="">
+        <title>browser-sync总结</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">browser-sync总结</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491181200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a></span>
+                </section>
+                <article class="content"><!-- TOC -->
+
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#演示代码">演示代码</a></li>
+<li><a href="#使用命令">使用命令</a></li>
+<li><a href="#测试">测试</a></li>
+<li><a href="#使用注意事项">使用注意事项</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2>安装</h2>
+
+<pre><code>npm install -g browser-sync
+</code></pre>
+
+<h2>演示代码</h2>
+
+<p>index.html</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;style&gt;
+        #demo{
+            display: none;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;点击弹框&quot; id=&quot;btn&quot;&gt;
+    &lt;div id=&quot;demo&quot;&gt;
+        点击显示隐藏内容
+    &lt;/div&gt;
+    &lt;script&gt;
+        window.onload = function(){
+            var oDemo = document.querySelector('#demo');
+            var oBtn = document.querySelector('#btn');
+            oBtn.addEventListener('click',function(){
+                oDemo.style.display = 'block';
+            },false);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>style.css</p>
+
+<pre><code class="language-css">body{
+    background:red;
+}
+</code></pre>
+
+<h2>使用命令</h2>
+
+<pre><code>browser-sync start --server --files &quot;*.*&quot;
+</code></pre>
+
+<h2>测试</h2>
+
+<ol>
+<li>点击按钮</li>
+<li>把style.css中的background改成其他颜色，观察页面的反应</li>
+</ol>
+
+<h2>使用注意事项</h2>
+
+<ul>
+<li>文件名一定要用双引号，不要用单引号</li>
+<li>html文件一定要有骨架结构</li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/%e6%89%93%e5%8c%85sea.js.html">打包sea.js</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/express%e5%ae%9e%e7%8e%b0%e7%95%99%e8%a8%80%e6%9c%ac%e9%a1%b9%e7%9b%ae.html">express实现留言本项目</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>
