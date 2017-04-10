@@ -74,136 +74,7 @@
                     
                     <span class="tags"><a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a></span>
                 </section>
-                <article class="content"><!-- TOC -->
-
-<ul>
-<li><a href="#为什么要对代码进行版本控制">为什么要对代码进行版本控制</a>
-
-<ul>
-<li><a href="#场景一">场景一</a></li>
-<li><a href="#场景二">场景二</a></li>
-<li><a href="#一个不太成熟的想法">一个不太成熟的想法</a></li>
-<li><a href="#更科学的方式">更科学的方式</a></li>
-<li><a href="#通俗的理解">通俗的理解</a></li>
-</ul></li>
-<li><a href="#常用的版本控制软件">常用的版本控制软件</a>
-
-<ul>
-<li><a href="#按类型划分">按类型划分</a>
-
-<ul>
-<li><a href="#集中式">集中式</a>
-
-<ul>
-<li><a href="#常见的代表">常见的代表</a></li>
-</ul></li>
-<li><a href="#分布式">分布式</a>
-
-<ul>
-<li><a href="#常见的代表-1">常见的代表</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#集中式-vs-分布式">集中式 vs 分布式</a></li>
-<li><a href="#git安装">git安装</a>
-
-<ul>
-<li><a href="#windows电脑安装">windows电脑安装</a></li>
-<li><a href="#mac电脑">mac电脑</a></li>
-<li><a href="#git-bash使用注意事项">git bash使用注意事项</a></li>
-</ul></li>
-<li><a href="#配置用户信息">配置用户信息</a>
-
-<ul>
-<li><a href="#注意">注意</a></li>
-<li><a href="#查看是否设置正确">查看是否设置正确</a></li>
-</ul></li>
-<li><a href="#创建git项目">创建git项目</a></li>
-<li><a href="#将代码提交到仓库当中">将代码提交到仓库当中</a>
-
-<ul>
-<li><a href="#工作区暂存区仓库">工作区、暂存区、仓库</a></li>
-<li><a href="#一个文件的生命周期">一个文件的生命周期</a></li>
-<li><a href="#将代码提交到仓库的步骤">将代码提交到仓库的步骤</a></li>
-<li><a href="#查看当前代码的状态">查看当前代码的状态</a>
-
-<ul>
-<li><a href="#如何知道是哪个状态">如何知道是哪个状态</a></li>
-<li><a href="#命令简化">命令简化</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#git忽略文件">git忽略文件</a></li>
-<li><a href="#版本回退">版本回退</a>
-
-<ul>
-<li><a href="#理解版本">理解版本</a></li>
-<li><a href="#文件差异对比">文件差异对比</a></li>
-<li><a href="#日志的查看">日志的查看</a></li>
-<li><a href="#版本回退-1">版本回退</a></li>
-<li><a href="#查看所有的版本号">查看所有的版本号</a></li>
-<li><a href="#根据版本号进行对比">根据版本号进行对比</a></li>
-<li><a href="#根据版本号进行回退">根据版本号进行回退</a></li>
-</ul></li>
-<li><a href="#配置别名">配置别名</a></li>
-<li><a href="#分支">分支</a>
-
-<ul>
-<li><a href="#创建分支">创建分支</a></li>
-<li><a href="#切换分支">切换分支</a>
-
-<ul>
-<li><a href="#注意">注意：</a></li>
-</ul></li>
-<li><a href="#删除分支">删除分支</a></li>
-<li><a href="#创建并切换分支">创建并切换分支</a></li>
-</ul></li>
-<li><a href="#合并分支">合并分支</a>
-
-<ul>
-<li><a href="#如何判断出现了冲突">如何判断出现了冲突</a>
-
-<ul>
-<li><a href="#冲突的原因">冲突的原因</a></li>
-<li><a href="#冲突什么情况下会出现">冲突什么情况下会出现？</a></li>
-</ul></li>
-<li><a href="#本地模拟冲突">本地模拟冲突</a>
-
-<ul>
-<li><a href="#实验一">实验一</a></li>
-<li><a href="#实验二">实验二</a></li>
-<li><a href="#实验三">实验三</a></li>
-<li><a href="#如何解决冲突">如何解决冲突</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#git练习">git练习</a></li>
-<li><a href="#github">github</a></li>
-<li><a href="#github工作流">github工作流</a></li>
-<li><a href="#github配置ssh">github配置ssh</a></li>
-<li><a href="#github工作流更通用版">github工作流(更通用版)</a></li>
-<li><a href="#推送到远程服务器的时候出现拒绝rejected">推送到远程服务器的时候出现拒绝(rejected)</a>
-
-<ul>
-<li><a href="#本地代码能推送的前提">本地代码能推送的前提</a></li>
-<li><a href="#提交到github被拒绝">提交到github被拒绝</a>
-
-<ul>
-<li><a href="#什么情况下出现rejected">什么情况下出现rejected</a></li>
-<li><a href="#解决的办法">解决的办法</a></li>
-<li><a href="#远程模拟冲突">远程模拟冲突</a></li>
-<li><a href="#如何解决rejected">如何解决rejected</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#tortoisegit的使用">tortoiseGit的使用</a>
-
-<ul>
-<li><a href="#优点">优点</a></li>
-</ul></li>
-<li><a href="#git常见问题汇总">git常见问题汇总</a></li>
-</ul>
-
-<!-- /TOC -->
-
-<h2>为什么要对代码进行版本控制</h2>
+                <article class="content"><h2>为什么要对代码进行版本控制</h2>
 
 <h3>场景一</h3>
 
@@ -610,6 +481,114 @@ git push -u origin master
 <h2>git常见问题汇总</h2>
 
 <p><a href="https://github.com/zhengwei1949/git-tips">git常见问题汇总</a></p>
+
+<h2>git常用命令汇总</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>git init</td>
+<td>初始化仓库</td>
+</tr>
+
+<tr>
+<td>git add .</td>
+<td>把工作区中未保存的文件保存到暂存区</td>
+</tr>
+
+<tr>
+<td>git commit -m &lsquo;注释&rsquo;</td>
+<td>把文件从暂存区提交到仓库</td>
+</tr>
+
+<tr>
+<td>git status</td>
+<td>查看当前仓库的状态(红色代表的工作区有代码未保存到暂存区，绿色代表有代码未提交到仓库)</td>
+</tr>
+
+<tr>
+<td>git diff</td>
+<td>查看工作区与暂存区、仓库代码的区别</td>
+</tr>
+
+<tr>
+<td>git diff &ndash;cached</td>
+<td>查看暂存区与仓库代码的区别</td>
+</tr>
+
+<tr>
+<td>git diff 版本号1 版本号2</td>
+<td>对比两个版本号的区别</td>
+</tr>
+
+<tr>
+<td>git log</td>
+<td>查看提交日志</td>
+</tr>
+
+<tr>
+<td>git reset &ndash;hard HEAD</td>
+<td>撤销当前工作区、暂存区的修改</td>
+</tr>
+
+<tr>
+<td>git reset &ndash;hard HEAD~0</td>
+<td>撤销当前工作区、暂存区的修改</td>
+</tr>
+
+<tr>
+<td>git reset &ndash;hard HEAD~1</td>
+<td>切换到上一次提交的代码状态</td>
+</tr>
+
+<tr>
+<td>git reset &ndash;hard 版本号</td>
+<td>切换到某版本号的提交</td>
+</tr>
+
+<tr>
+<td>git branch 分支名</td>
+<td>创建分支</td>
+</tr>
+
+<tr>
+<td>git checkout 分支名</td>
+<td>切换分支</td>
+</tr>
+
+<tr>
+<td>git branch -d 分支名</td>
+<td>删除分支</td>
+</tr>
+
+<tr>
+<td>git merge 分支名</td>
+<td>合并分支</td>
+</tr>
+
+<tr>
+<td>git remote add origin 远程服务器地址</td>
+<td>提交到远程服务器</td>
+</tr>
+
+<tr>
+<td>git push -u origin master</td>
+<td>简写push命令(第一次提交)</td>
+</tr>
+
+<tr>
+<td>git push</td>
+<td>简写push命令(以后的提交)</td>
+</tr>
+</tbody>
+</table>
 </article>
                 <section class="author">
                     
@@ -618,11 +597,16 @@ git push -u origin master
                 </section>
                 <section class="recommend">
                     
-                    <section class="nav prev">
+                    <section class="nav prev more">
                         <div class="head">上篇文章</div>
                         <a class="link" href="/npm%e6%80%bb%e7%bb%93.html">npm总结</a>
                     </section>
                     
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/angular_api.html">angular api总结</a>
+                    </section>
                     
                 </section>
                 

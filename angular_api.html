@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑伟博客">
+<meta name="twitter:description" content="前端技术学习">
+<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://zhengwei1949.github.io">
+<meta property="og:title" content="郑伟博客">
+<meta property="og:description" content="前端技术学习">
+<meta property="og:site_name" content="郑伟博客">
+<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="郑伟博客">
+<meta itemprop="description" content="前端技术学习">
+<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://zhengwei1949.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="angular框架,">
+        <meta name="description" content="angular api总结">
+        <meta name="author" content="">
+        <title>angular api总结</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    郑伟博客
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">angular api总结</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491127200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/angular%e6%a1%86%e6%9e%b6/index.html">angular框架</a></span>
+                </section>
+                <article class="content"><h2>angular api</h2>
+
+<ul>
+<li>为了防止与你的代码发生命名冲突，angular公共对象的前缀名以$开头，而私有对象的前缀名以$$开头，请尽量避免在你的代码中使用$,$$作为你的前缀</li>
+<li>$routeParams用来访问URL当前的查询字符串值</li>
+<li>$route用来获取当前被访问路由的详情信息</li>
+<li>$routeProvider用来为应用注册路由</li>
+<li>angular.module是一个用于创建、注册和检索angular模块的全局方法。一个应用中所需要使用的所有模块(angular核心或第三方)都需要使用这种机制注册。传入一个参数是检索一个存在的angular模块，传入多个参数则是创建一个新的angular模块</li>
+<li>模块是服务(service),指令(directive),控制器(controllers),过滤器(filters)和配置信息的集合。</li>
+<li>angular.bootstrap使用这个函数来手动启动angular应用
+<code>html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div ng-controller=&quot;demoController&quot;&gt;
+    {{greeting}}
+&lt;/div&gt;
+&lt;script src=&quot;node_modules/angular/angular.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var app = angular.module('demo',[]);
+    app.controller('demoController',function($scope){
+        $scope.greeting = 'ceshi';
+    });
+    angular.bootstrap(document,['demo']);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></li>
+<li>angular.element如果引入jquery,angular.element则是jquery函数的别名，如果没有引入jquery,则angular.element则表示angular内建的jquery的子级，叫做jqLite,如果使用jquery,则需确认它在angular.js文件之前载入,注意：在angular中，所有的元素总是被jquery或jqlite封装过的，它们不会是原生的DOM.</li>
+<li>angular.fromJson 将输入序列化成json形式的字符串</li>
+<li>angular.fromJson反序列化json字符串</li>
+<li>$anchorScroll 当被调用的时候，页面会滚动到与元素相关联的指定的hash处，或者滚动到当前$location.hash()处</li>
+<li>$http
+<code>javascript
+// 简单的 GET 请求示例:
+$http.get('/someUrl').
+success(function(data, status, headers, config) {
+// 当响应成功了
+// 这个回调函数会被异步调用
+}).
+error(function(data, status, headers, config) {
+// 如果发生错误或则相应返回了错误的状态吗
+// 这个回调函数会被异步调用
+});
+</code></li>
+</ul>
+
+<pre><code class="language-javascript">// 简单的 POST 请求示例 (passing data) :
+$http.post('/someUrl', {msg:'hello word!'}).
+  success(function(data, status, headers, config) {
+    // 当响应成功了
+    // 这个回调函数会被异步调用
+  }).
+  error(function(data, status, headers, config) {
+    // 如果发生错误或则相应返回了错误的状态吗
+    // 这个回调函数会被异步调用
+  });
+</code></pre>
+
+<ul>
+<li>$location
+
+<ul>
+<li>$location.absUrl() 用于获取完整的url信息</li>
+<li>$location.url()这个方法既可以获取也可以设置，没传入参数时返回url</li>
+</ul></li>
+<li>事件指令
+
+<ul>
+<li>ng-focus</li>
+<li>ng-blur</li>
+<li>ng-change 这个指令需要 ngModel 作为前提。</li>
+<li>ng-checked 这个指令需要和 ngModel 一同使用</li>
+<li>ng-disabled</li>
+<li>ng-readonly</li>
+<li>ng-selected</li>
+<li>ng-open</li>
+<li>ng-submit 小心同时使用 <code>ngClick</code> 和 <code>ngSubmit</code>，这可能引起“重复提交”</li>
+<li>ng-click</li>
+<li>ng-dblclick</li>
+<li>ng-copy</li>
+<li>ng-csp</li>
+<li>ng-paste</li>
+<li>ng-mousedown</li>
+<li>ng-mouseenter</li>
+<li>ng-mousemove</li>
+<li>ng-mouseup</li>
+<li>ngTouch.ng-click</li>
+<li>ngTouch.ng-swipe-left</li>
+<li>ngTouch.ng-swipe-right</li>
+<li>ng-class
+
+<ul>
+<li>如果表达式解析为一个字符串，这个字符串应该使用空格来分割 CSS 类名。</li>
+<li>如果表达式解析为一个对象，那么每个键值对（key-value）中，如果值（value）为真值（true） 那么与它对应的键名（key）将被当做 CSS 类名添加进去。（译：{red: true, blue: 0} red 会被添加，blue 则不会）</li>
+<li>如果表达式解析为一个数组，那么数组中的每个元素的形式都应该为类型1中所述的字符串形式，或者类型2 中所述的对象形式。也就是说你可以在一个数组中混合使用这两种表达式来更好的控制出现的 CSS 类名。 下面的例子会展现出来。</li>
+</ul></li>
+<li>ng-class-even ngClassOdd 与 ngClassEven 指令工作方式其实与 ngClass 是一致的。只不过它们是配合 ngRepeat 使用的，并且只在奇数行（或偶数行）生效。</li>
+<li>ng-class-odd</li>
+<li>ng-keydown</li>
+<li>ng-keyup</li>
+<li>ng-keypress</li>
+<li>ng-model ngModel 指令将一个 input，select，textarea（或者自定义的表单控件）绑定到使用了 NgModelController的作用域的一个属性上，这个属性是由这个指令创建并导出的。</li>
+<li>ng-transclude 这个指令会在父级指令的内部标记一个插入点，当父级指令重新进行模板渲染时，会将标签内原有的DOM安放到插入点的位置，元素内的内容会在被插入到特定的位置前删除掉</li>
+</ul></li>
+<li>filters
+
+<ul>
+<li>ng.currency</li>
+<li>ng.date</li>
+<li>ng.filter</li>
+<li>ng.json</li>
+<li>ng.lowercase</li>
+<li>ng.uppercase</li>
+<li>ng.number</li>
+<li>ng.limitTo</li>
+<li>ng.orderBy</li>
+<li>ngSanitize.linky</li>
+</ul></li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/git%e6%80%bb%e7%bb%93.html">git总结</a>
+                    </section>
+                    
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//zhengwei.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        郑伟博客 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

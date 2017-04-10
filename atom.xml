@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>郑伟博客</title>
   <id>https://zhengwei1949.github.io</id>
-  <updated>2017-04-05T18:36:12+08:00</updated>
+  <updated>2017-04-10T11:53:42+08:00</updated>
   <subtitle>前端技术学习</subtitle>
   <link href="https://zhengwei1949.github.io"></link>
   <author>
     <name>郑伟博客</name>
   </author>
+  <entry>
+    <title>打包sea.js</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
+    <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
+  </entry>
+  <entry>
+    <title>angular中使用jquery</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_jquery.html</id>
+    <content type="html">&lt;p&gt;angular中使用jquery&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/angular_jquery.html"></link>
+  </entry>
+  <entry>
+    <title>angular内置指令汇总</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_内置指令汇总.html</id>
+    <content type="html">&lt;p&gt;angular内置指令汇总&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/angular_内置指令汇总.html"></link>
+  </entry>
+  <entry>
+    <title>bower使用手记</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/bower使用手记.html</id>
+    <content type="html">&lt;p&gt;bower是一个用来下载前端的库(框架)的下载器&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/bower使用手记.html"></link>
+  </entry>
+  <entry>
+    <title>常用前端资源汇总</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/常用前端资源汇总.html</id>
+    <content type="html">&lt;p&gt;常用前端资源汇总&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
+  </entry>
   <entry>
     <title>vue简明教程</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
@@ -22,46 +57,11 @@
     <link href="https://zhengwei1949.github.io/理解promise.html"></link>
   </entry>
   <entry>
-    <title>打包sea.js</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
-    <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
-  </entry>
-  <entry>
-    <title>扒网站教程</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/扒网站教程.html</id>
-    <content type="html">&lt;p&gt;扒网站&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/扒网站教程.html"></link>
-  </entry>
-  <entry>
     <title>gulp总结</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
     <id>tag:zhengwei1949.github.io,2017-04-03:/gulp使用总结.html</id>
     <content type="html">&lt;p&gt;gulp是一个用来前端的工作流构建工具。&lt;/p&gt;&#xA;</content>
     <link href="https://zhengwei1949.github.io/gulp使用总结.html"></link>
-  </entry>
-  <entry>
-    <title>常用前端资源汇总</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/常用前端资源汇总.html</id>
-    <content type="html">&lt;p&gt;常用前端资源汇总&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
-  </entry>
-  <entry>
-    <title>vue cli使用总结</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/vue cli使用总结.html</id>
-    <content type="html">&lt;p&gt;vue项目脚手架&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/vue cli使用总结.html"></link>
-  </entry>
-  <entry>
-    <title>bower使用手记</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/bower使用手记.html</id>
-    <content type="html">&lt;p&gt;bower是一个用来下载前端的库(框架)的下载器&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/bower使用手记.html"></link>
   </entry>
   <entry>
     <title>如何写简历</title>
@@ -71,10 +71,10 @@
     <link href="https://zhengwei1949.github.io/简历.html"></link>
   </entry>
   <entry>
-    <title>express实现留言本项目</title>
-    <updated>2017-04-03T09:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/express实现留言本项目.html</id>
-    <content type="html">&lt;p&gt;express是一个轻量级的node.js框架&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/express实现留言本项目.html"></link>
+    <title>vue cli使用总结</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/vue cli使用总结.html</id>
+    <content type="html">&lt;p&gt;vue项目脚手架&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/vue cli使用总结.html"></link>
   </entry>
 </feed>
