@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="常用前端资源汇总,">
-        <meta name="description" content="常用前端资源汇总">
+        <meta name="keywords" content="vpn,">
+        <meta name="description" content="翻墙的终极解决方案">
         <meta name="author" content="">
-        <title>常用前端资源汇总</title>
+        <title>翻墙的终极解决方案</title>
     </head>
     <body>
         <article class="container">
@@ -65,44 +65,120 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">常用前端资源汇总</h1>
+                <h1 class="title">翻墙的终极解决方案</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1491184800"><span class="from"></span></span>
+                    <span class="date" data-time="1491127200"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/%e5%b8%b8%e7%94%a8%e5%89%8d%e7%ab%af%e8%b5%84%e6%ba%90%e6%b1%87%e6%80%bb/index.html">常用前端资源汇总</a></span>
+                    <span class="tags"><a class="tag" href="/tag/vpn/index.html">vpn</a></span>
                 </section>
-                <article class="content"><ul>
-<li><a href="http://pythontutor.com/visualize.html">代码执行可视化</a></li>
-<li><a href="https://dorey.github.io/JavaScript-Equality-Table/">js各种对比对照表</a></li>
-<li><a href="https://regexper.com/">正则可视化</a></li>
-<li><a href="http://anicollection.github.io/#/">css3动画代码</a></li>
-<li><a href="https://kimblim.dk/css-tests/selectors/">css选择器速查表</a></li>
-<li><a href="https://github.com/doyoe/trip">移动端开发经验汇总</a></li>
-<li>项目管理
+                <article class="content"><h2>购买淘宝美国的vps</h2>
+
+<h2>安装shadowsocks</h2>
+
+<p>在命令行中执行如下的命令</p>
+
+<pre><code>apt-get install python-pip python-m2crypto
+pip install shadowsocks
+</code></pre>
+
+<h2>创建/etc/shadowsocks.json文件，配置内容如下：</h2>
+
+<pre><code>{
+    &quot;server&quot;:&quot;你的ip地址&quot;,
+    &quot;server_port&quot;:8388,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;密码&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: false,
+    &quot;workers&quot;: 1
+}
+</code></pre>
+
+<h2>运行shadowsocks服务器</h2>
+
+<pre><code>ssserver -c /etc/shadowsocks.json
+</code></pre>
+
+<h2>配置laoD博客上的host(此步骤是保证你可以下载switchSharp插件)</h2>
+
+<p><a href="https://laod.cn/">老d博客</a></p>
+
+<h2>配置你的switchSharp</h2>
 
 <ul>
-<li><a href="http://www.zentao.net/">禅道</a></li>
-<li><a href="http://www.lemonpm.com">柠檬</a></li>
-<li><a href="https://bug.pgyer.com/">蒲公英</a></li>
-</ul></li>
-<li>常见免费api
-
-<ul>
-<li><a href="http://apistore.baidu.com/">百度api</a></li>
-</ul></li>
-<li><a href="https://madewithvuejs.com/">vue项目收藏</a></li>
-<li>图床
-
-<ul>
-<li><a href="http://jiantuku.com/#/uploads?scope=all">图床1</a></li>
-<li><a href="http://mpic.lzhaofu.cn/">图床2</a></li>
-<li><a href="http://www.tietuku.com/">图床3</a></li>
-</ul></li>
-<li><a href="https://github.com/i5ting/tocmd.gem">markdown生成html</a></li>
+<li>http代理 &ndash;&gt; 127.0.0.1</li>
+<li>端口 &ndash;&gt; 8888</li>
 </ul>
+
+<h2>下载shadowsocks.exe客户端并安装</h2>
+
+<h2>配置shadowsocks客户端</h2>
+
+<ul>
+<li>服务器ip:你的阿里云ip</li>
+<li>服务器端口:</li>
+<li>密码</li>
+</ul>
+
+<h2>测试是否可用</h2>
+
+<h2>把shadowsocks做成服务</h2>
+
+<h3>创建/etc/init.d/shadowsocks文件</h3>
+
+<pre><code>#!/bin/sh
+
+start(){
+        ssserver -c /etc/shadowsocks.json -d start
+}
+
+stop(){
+        ssserver -c /etc/shadowsocks.json -d stop
+}
+
+case &quot;$1&quot; in
+start)
+        start        
+        ;;
+stop)
+        stop        
+        ;;
+reload)
+        stop
+        start        
+        ;;
+*)
+        echo &quot;Usage: $0 {start|reload|stop}&quot;
+        exit 1        
+        ;;
+esac
+</code></pre>
+
+<h3>给这个文件添加权限</h3>
+
+<pre><code>chmod +x /etc/init.d/shadowsocks
+</code></pre>
+
+<h3>创建/etc/init/shadowsocks.conf</h3>
+
+<pre><code>start on (runlevel [2345])stop on (runlevel [016])pre-start script
+/etc/init.d/shadowsocks start
+end script
+
+post-stop script
+/etc/init.d/shadowsocks stop
+end script
+</code></pre>
+
+<h3>开启这个服务</h3>
+
+<pre><code>sudo service shadowsocks {start|reload|stop}
+</code></pre>
 </article>
                 <section class="author">
                     
@@ -111,15 +187,10 @@
                 </section>
                 <section class="recommend">
                     
-                    <section class="nav prev more">
-                        <div class="head">上篇文章</div>
-                        <a class="link" href="/bower%e4%bd%bf%e7%94%a8%e6%89%8b%e8%ae%b0.html">bower使用手记</a>
-                    </section>
                     
-                    
-                    <section class="nav next more">
+                    <section class="nav next">
                         <div class="head">下篇文章</div>
-                        <a class="link" href="/angular_jquery.html">angular中使用jquery</a>
+                        <a class="link" href="/%e6%89%93%e5%8c%85sea.js.html">打包sea.js</a>
                     </section>
                     
                 </section>

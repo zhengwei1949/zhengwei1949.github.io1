@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>郑伟博客</title>
   <id>https://zhengwei1949.github.io</id>
-  <updated>2017-04-10T11:53:42+08:00</updated>
+  <updated>2017-04-29T18:31:39+08:00</updated>
   <subtitle>前端技术学习</subtitle>
   <link href="https://zhengwei1949.github.io"></link>
   <author>
     <name>郑伟博客</name>
   </author>
   <entry>
+    <title>翻墙的终极解决方案</title>
+    <updated>2017-04-02T18:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-02:/如何翻墙.html</id>
+    <content type="html">&lt;p&gt;翻墙的终极解决方案&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/如何翻墙.html"></link>
+  </entry>
+  <entry>
     <title>打包sea.js</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
     <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
     <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
     <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
-  </entry>
-  <entry>
-    <title>angular中使用jquery</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_jquery.html</id>
-    <content type="html">&lt;p&gt;angular中使用jquery&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/angular_jquery.html"></link>
   </entry>
   <entry>
     <title>angular内置指令汇总</title>
@@ -43,11 +43,11 @@
     <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
   </entry>
   <entry>
-    <title>vue简明教程</title>
+    <title>angular中使用jquery</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/vue简明教程.html</id>
-    <content type="html">&lt;p&gt;优雅、简洁的前端框架&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/vue简明教程.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_jquery.html</id>
+    <content type="html">&lt;p&gt;angular中使用jquery&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/angular_jquery.html"></link>
   </entry>
   <entry>
     <title>理解promise</title>
