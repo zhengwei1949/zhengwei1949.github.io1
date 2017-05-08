@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>郑伟博客</title>
   <id>https://zhengwei1949.github.io</id>
-  <updated>2017-05-08T19:03:17+08:00</updated>
+  <updated>2017-05-08T19:06:20+08:00</updated>
   <subtitle>前端技术学习</subtitle>
   <link href="https://zhengwei1949.github.io"></link>
   <author>
     <name>郑伟博客</name>
   </author>
+  <entry>
+    <title>hexo简明教程</title>
+    <updated>2017-05-08T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-05-08:/hexo.html</id>
+    <content type="html">&lt;p&gt;用hexo搭建博客&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/hexo.html"></link>
+  </entry>
   <entry>
     <title>翻墙的终极解决方案</title>
     <updated>2017-04-02T18:00:00+08:00</updated>
@@ -20,13 +27,6 @@
     <id>tag:zhengwei1949.github.io,2017-04-03:/打包sea.js.html</id>
     <content type="html">&lt;p&gt;打包sea.js代码&lt;/p&gt;&#xA;</content>
     <link href="https://zhengwei1949.github.io/打包sea.js.html"></link>
-  </entry>
-  <entry>
-    <title>angular内置指令汇总</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_内置指令汇总.html</id>
-    <content type="html">&lt;p&gt;angular内置指令汇总&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/angular_内置指令汇总.html"></link>
   </entry>
   <entry>
     <title>bower使用手记</title>
@@ -43,11 +43,11 @@
     <link href="https://zhengwei1949.github.io/常用前端资源汇总.html"></link>
   </entry>
   <entry>
-    <title>angular中使用jquery</title>
+    <title>angular内置指令汇总</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_jquery.html</id>
-    <content type="html">&lt;p&gt;angular中使用jquery&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/angular_jquery.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_内置指令汇总.html</id>
+    <content type="html">&lt;p&gt;angular内置指令汇总&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/angular_内置指令汇总.html"></link>
   </entry>
   <entry>
     <title>理解promise</title>
@@ -64,11 +64,11 @@
     <link href="https://zhengwei1949.github.io/gulp使用总结.html"></link>
   </entry>
   <entry>
-    <title>vue简明教程</title>
+    <title>angular中使用jquery</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/hexo.html</id>
-    <content type="html">&lt;p&gt;优雅、简洁的前端框架&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/hexo.html"></link>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/angular_jquery.html</id>
+    <content type="html">&lt;p&gt;angular中使用jquery&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/angular_jquery.html"></link>
   </entry>
   <entry>
     <title>如何写简历</title>
