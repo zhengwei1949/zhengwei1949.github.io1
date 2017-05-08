@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>郑伟博客</title>
   <id>https://zhengwei1949.github.io</id>
-  <updated>2017-04-29T18:31:39+08:00</updated>
+  <updated>2017-05-08T19:03:17+08:00</updated>
   <subtitle>前端技术学习</subtitle>
   <link href="https://zhengwei1949.github.io"></link>
   <author>
@@ -64,17 +64,17 @@
     <link href="https://zhengwei1949.github.io/gulp使用总结.html"></link>
   </entry>
   <entry>
+    <title>vue简明教程</title>
+    <updated>2017-04-03T10:00:00+08:00</updated>
+    <id>tag:zhengwei1949.github.io,2017-04-03:/hexo.html</id>
+    <content type="html">&lt;p&gt;优雅、简洁的前端框架&lt;/p&gt;&#xA;</content>
+    <link href="https://zhengwei1949.github.io/hexo.html"></link>
+  </entry>
+  <entry>
     <title>如何写简历</title>
     <updated>2017-04-03T10:00:00+08:00</updated>
     <id>tag:zhengwei1949.github.io,2017-04-03:/简历.html</id>
     <content type="html">&lt;p&gt;如何写简历&lt;/p&gt;&#xA;</content>
     <link href="https://zhengwei1949.github.io/简历.html"></link>
-  </entry>
-  <entry>
-    <title>vue cli使用总结</title>
-    <updated>2017-04-03T10:00:00+08:00</updated>
-    <id>tag:zhengwei1949.github.io,2017-04-03:/vue cli使用总结.html</id>
-    <content type="html">&lt;p&gt;vue项目脚手架&lt;/p&gt;&#xA;</content>
-    <link href="https://zhengwei1949.github.io/vue cli使用总结.html"></link>
   </entry>
 </feed>
